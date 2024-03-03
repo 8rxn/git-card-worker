@@ -84,7 +84,7 @@ export default {
     <text x="320" y="50" font-family="Giest, Courier New, Serif" font-size="40" fill="#fafafa" text-anchor="start">${userData.name}</text>
     <text x="320" y="75" font-family="Giest, Courier New, Serif" font-size="15" fill="#fafafa" text-anchor="start">@${userData.login}</text>
     <text x="320" y="100" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
-        ${userData.public_gists} gists    ${userData.followers} followers
+        ${userData.public_gists ? `${userData.public_gists} gists` : ''}    ${userData.followers} followers
     </text>
     <text x="320" y="170" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${userData.public_repos} repos   ${starredData.length} stars  
@@ -94,6 +94,10 @@ export default {
     </text>
     <text x="320" y="260" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${issueData.total_count} issues created
+    </text>
+
+    <text x="630" y="310" font-family="Giest, Courier New, Serif" font-size="12" fill="#fafafa" text-anchor="end">
+        gitme.rajaryan.work
     </text>
 
     <!-- QR Code (Placeholder) -->
