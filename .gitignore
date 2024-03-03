@@ -23,6 +23,8 @@ _.seed
 
 lib-cov
 
+wrangler.toml
+
 # Coverage directory used by tools like istanbul
 
 coverage
