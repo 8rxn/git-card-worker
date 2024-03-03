@@ -76,30 +76,28 @@ export default {
 
 				console.log(qrdata);
 				const svg = `
-				<svg width="1280" height="640" xmlns="http://www.w3.org/2000/svg">
+				<svg width="640" height="320" xmlns="http://www.w3.org/2000/svg">
     <!-- Background Rectangle -->
-    <image href="${bg}" x="0" y="0" height="640px" width="1280px" />
+    <image href="${bg}" x="0" y="0" height="320px" width="640px" />
 
     <!-- Text Elements -->
-    <text x="640" y="100" font-family="Giest, Courier New, Serif" font-size="60" fill="#fafafa" text-anchor="start">${userData.name}</text>
-    <text x="640" y="150" font-family="Giest, Courier New, Serif" font-size="25" fill="#fafafa" text-anchor="start">@${userData.login}</text>
-    <text x="640" y="200" font-family="Giest, Courier New, Serif" font-size="35" fill="#fafafa" text-anchor="start">
+    <text x="320" y="50" font-family="Giest, Courier New, Serif" font-size="40" fill="#fafafa" text-anchor="start">${userData.name}</text>
+    <text x="320" y="75" font-family="Giest, Courier New, Serif" font-size="15" fill="#fafafa" text-anchor="start">@${userData.login}</text>
+    <text x="320" y="100" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${userData.public_gists} gists    ${userData.followers} followers
     </text>
-    <text x="640" y="340" font-family="Giest, Courier New, Serif" font-size="35" fill="#fafafa" text-anchor="start">
+    <text x="320" y="170" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${userData.public_repos} repos   ${starredData.length} stars  
     </text>
-    <text x="640" y="410" font-family="Giest, Courier New, Serif" font-size="35" fill="#fafafa" text-anchor="start">
+    <text x="320" y="205" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${prData.total_count} PRs raised
     </text>
-    <text x="640" y="490" font-family="Giest, Courier New, Serif" font-size="35" fill="#fafafa" text-anchor="start">
+    <text x="320" y="260" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${issueData.total_count} issues created
     </text>
 
     <!-- QR Code (Placeholder) -->
-    <rect x="10" y="10" width="80" height="80" fill="black" />
-	<image href="${qrdata}" x="15" y="15" height="100px" width="100px" />
-    <text x="15" y="50" font-family="Giest, Courier New, Serif" font-size="12" fill="white" text-anchor="start">QR Code</text>
+	<image href="${qrdata}" x="10" y="10" height="50px" width="50px" />
 </svg>`;
 
 				return new Response(svg, {

@@ -23,7 +23,7 @@ _.seed
 
 lib-cov
 
-wrangler.toml
+
 
 # Coverage directory used by tools like istanbul
 
@@ -101,6 +101,8 @@ web_modules/
 .env.test.local
 .env.production.local
 .env.local
+
+wrangler.toml
 
 # parcel-bundler cache (https://parceljs.org/)
 
