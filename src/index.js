@@ -75,13 +75,26 @@ export default {
 				const qrdata = `data:image/png;base64,${qrbuffer}`;
 
 				console.log(qrdata);
+
+				let fontSize = 40;
+
+				if (userData.name.length > 15) {
+					let name = userData.name.split(' ')[0];
+
+					if (name.length > 15) {
+						fontSize = 30;
+					}
+				}
+
 				const svg = `
 				<svg width="640" height="320" xmlns="http://www.w3.org/2000/svg">
     <!-- Background Rectangle -->
     <image href="${bg}" x="0" y="0" height="320px" width="640px" />
 
     <!-- Text Elements -->
-    <text x="320" y="50" font-family="Giest, Courier New, Serif" font-size="40" fill="#fafafa" text-anchor="start">${userData.name}</text>
+    <text x="320" y="50" font-family="Giest, Courier New, Serif" font-size="${fontSize}" fill="#fafafa" text-anchor="start">${
+					userData.name
+				}</text>
     <text x="320" y="75" font-family="Giest, Courier New, Serif" font-size="15" fill="#fafafa" text-anchor="start">@${userData.login}</text>
     <text x="320" y="100" font-family="Giest, Courier New, Serif" font-size="18" fill="#fafafa" text-anchor="start">
         ${userData.public_gists ? `${userData.public_gists} gists` : ''}    ${userData.followers} followers
